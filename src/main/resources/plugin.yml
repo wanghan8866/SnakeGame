@@ -1,0 +1,6 @@
+name: SnakeGame
+version: '${project.version}'
+main: snakegame.snakegame.SnakeGameMain
+api-version: 1.19
+commands:
+  snake:
