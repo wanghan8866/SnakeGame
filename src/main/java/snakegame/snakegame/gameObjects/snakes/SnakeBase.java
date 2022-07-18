@@ -141,5 +141,10 @@ abstract public class SnakeBase {
         return body.size();
     }
 
+    public SnakePart getTail(){
+        if(body.isEmpty()) return null;
+        return body.get(body.size()-1);
+    }
+
 
 }

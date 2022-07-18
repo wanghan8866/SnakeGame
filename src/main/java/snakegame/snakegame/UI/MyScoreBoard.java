@@ -65,7 +65,7 @@ public class MyScoreBoard {
         if(obj!=null){
             obj.unregister();
         }
-        player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+//        player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
 
     }
 
@@ -80,6 +80,7 @@ public class MyScoreBoard {
 
                 style.append(ChatColor.BOLD);
                 style.append(ChatColor.ITALIC);
+                style.append(ChatColor.UNDERLINE);
             }
 
             player.getScoreboard().getTeam(snake.getColour()+snake.getName()).setSuffix(

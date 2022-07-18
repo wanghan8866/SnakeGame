@@ -27,12 +27,15 @@ public class GameManager {
         MaterialRegister.addBadMaterial(Material.AMETHYST_BLOCK);
         MaterialRegister.addBadMaterial(Material.BLUE_STAINED_GLASS);
         MaterialRegister.addBadMaterial(Material.LIGHT_BLUE_STAINED_GLASS);
-        MaterialRegister.addBadMaterial(Material.COPPER_BLOCK);
+//        MaterialRegister.addBadMaterial(Material.WAXED_COPPER_BLOCK);
         MaterialRegister.addBadMaterial(Material.PURPLE_STAINED_GLASS);
         MaterialRegister.addBadMaterial(Material.LIME_STAINED_GLASS);
         MaterialRegister.addBadMaterial(Material.RAW_COPPER_BLOCK);
         MaterialRegister.addBadMaterial(Material.YELLOW_STAINED_GLASS);
         MaterialRegister.addBadMaterial(Material.ORANGE_STAINED_GLASS);
+        MaterialRegister.addBadMaterial(Material.COPPER_ORE);
+        MaterialRegister.addBadMaterial(Material.WAXED_COPPER_BLOCK);
+        MaterialRegister.addBadMaterial(Material.WAXED_OXIDIZED_COPPER);
         MaterialRegister.addBadMaterial(Material.OBSIDIAN);
 
         MaterialRegister.addGoodMaterial(Material.GOLD_BLOCK);

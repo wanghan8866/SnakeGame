@@ -1,11 +1,10 @@
 package snakegame.snakegame.gameObjects.snakes;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.entity.Player;
 import snakegame.snakegame.Arena.Arena;
 import snakegame.snakegame.manager.CollisionManager;
+import snakegame.snakegame.manager.ParticlesManager;
 
 import java.util.*;
 
@@ -26,6 +25,7 @@ public class Snake extends SnakeBase {
         this.arena=arena;
         this.colour=colour;
         this.speed=4.0f;
+        ParticlesManager.spawnParticle(head.getLocation().clone().add(0.5,0.5,0.5),20, Color.BLUE);
 
 
     }

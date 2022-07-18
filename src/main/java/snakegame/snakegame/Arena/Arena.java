@@ -186,12 +186,16 @@ public class Arena {
     public void spawnFood(Location location){
         if(location!=null){
             location.getBlock().setType(Material.GOLD_BLOCK);
+            ArrayList<AdvancedAISnake> tem=new ArrayList<>();
             for (AdvancedAISnake snake:snakes){
                 if(!snake.isDead()){
                     snake.addGoal(location);
+                    tem.add(snake);
                 }
 
             }
+            snakes.clear();
+            snakes=tem;
         }
     }
     public void addSnake(AdvancedAISnake snakeBase){

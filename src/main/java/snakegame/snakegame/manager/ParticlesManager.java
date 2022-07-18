@@ -28,7 +28,7 @@ public class ParticlesManager {
                 for (Player player:Bukkit.getOnlinePlayers()
                 ) {
                     Particle.DustTransition dustTransition=new Particle.DustTransition(color,Color.WHITE,1.0f);
-                    player.spawnParticle(Particle.DUST_COLOR_TRANSITION,location,10,dustTransition);
+                    player.spawnParticle(Particle.DUST_COLOR_TRANSITION,location,2,dustTransition);
 //                    player.spawnParticle(Particle.DRIP_LAVA,location,10,0.1,0,0.1);
                 }
 

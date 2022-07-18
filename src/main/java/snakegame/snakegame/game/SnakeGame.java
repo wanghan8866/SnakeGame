@@ -105,6 +105,10 @@ public class SnakeGame {
         arena.addSnake(greedyAISnake);
 
 
+//        HamiltonianSnake hamiltonianSnake =HamiltonianSnake.createAISnake(arena.getRandomEmptyLocation(),arena);
+//        gameSnakesManager.addSnake(hamiltonianSnake);
+//        arena.addSnake(hamiltonianSnake);
+
         MyScoreBoard.setup(player,gameSnakesManager);
 
 

@@ -5,9 +5,11 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.entity.Player;
+import snakegame.snakegame.Arena.MaterialRegister;
 import snakegame.snakegame.manager.ParticlesManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -27,6 +29,14 @@ public class Path {
         }
         return nodes.get(nodes.size()-2);
     }
+    public Node getLast(){
+        if(nodes.isEmpty()) return null;
+        return nodes.get(nodes.size()-1);
+    }
+
+    public void reverse(){
+        Collections.reverse(nodes);
+    }
     public void add(Node node){
         nodes.add(node);
     }
@@ -42,7 +52,7 @@ public class Path {
 //            currentNode.getLocation().getBlock().setType(Material.WHITE_STAINED_GLASS);
 //            currentNode.getLocation().getBlock();
 
-            ParticlesManager.spawnParticle(currentNode.getLocation().clone().add(0.5,0.25,0.5),5,color);
+            ParticlesManager.spawnParticle(currentNode.getLocation().clone().add(0.5,0,0.5),10,color);
         }
     }
     public void clearPath(){
@@ -69,7 +79,23 @@ public class Path {
         return sum;
     }
 
+    public int size(){
+        return nodes.size();
+    }
+    public void remove(int n){
+        nodes.remove(n);
+    }
 
+
+    public boolean checkSafe(){
+        for (int i=nodes.size()-1;i>=1;i--){
+            Node currentNode=nodes.get(i);
+            if(MaterialRegister.isBadMaterial(currentNode.getLocation().getBlock().getType())){
+                return false;
+            }
+        }
+        return true;
+    }
     @Override
     public String toString() {
         StringBuilder stringBuilder=new StringBuilder("Path: ");
@@ -80,5 +106,13 @@ public class Path {
         }
         stringBuilder.append(" size: "+nodes.size());
         return stringBuilder.toString();
+    }
+
+    public Node pop(){
+        if(nodes.isEmpty()) return null;
+
+        Node node=nodes.get(size()-1);
+        nodes.remove(size()-1);
+        return node;
     }
 }

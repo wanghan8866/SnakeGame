@@ -70,6 +70,8 @@ public class AISnake extends SnakeBase{
 
     }
 
+
+
     @Override
     public boolean typeCheck(Material material, Location oldLocation, boolean isAdding, boolean setDeath) {
         switch (CollisionManager.collideWith(material)){

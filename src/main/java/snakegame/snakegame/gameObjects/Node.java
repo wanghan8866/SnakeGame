@@ -22,6 +22,15 @@ public class Node {
         this.hCost = hCost;
     }
 
+    public Node(Node node){
+        this.location = node.location;
+        this.parent = node.parent;
+        this.from = node.from;
+        this.currentDirection = node.currentDirection;
+        this.gCost = node.gCost;
+        this.hCost = node.hCost;
+    }
+
     public Direction getFrom() {
         return from;
     }
@@ -56,7 +65,7 @@ public class Node {
                 "location=" + location +
                 ", parent=" + parent +
                 ", from=" + from +
-                '}';
+                ", current: "+currentDirection+'}';
     }
 
 
@@ -97,6 +106,10 @@ public class Node {
     }
 
     public void setCurrentDirection(Direction currentDirection) {
+        if(this.currentDirection!=null&&this.currentDirection.equals(Direction.UP)){
+//            System.out.println("wired change"+currentDirection);
+        }
+
         this.currentDirection = currentDirection;
     }
 }

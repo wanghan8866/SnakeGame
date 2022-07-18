@@ -37,12 +37,13 @@ public class AdvancedAISnake extends AISnake{
             if(goal!=null&&MaterialRegister.isGoodMaterial(goal.getBlock().getType())){
 
                 currentPath=PathFindingManager.findPath(head.getLocation(),head.getCurrentDirection(),goal);
-                if(direction.equals(Direction.FORWARD)&&currentPath!=null){
-                    System.out.println(currentPath);
+                System.out.println("A* path: "+currentPath);
+                if(direction.equals(Direction.FORWARD)&&currentPath!=null&&currentPath.getSecond()!=null){
+
 //                    System.out.println("first: "+currentPath.getFirst().getFrom());
 //                    System.out.println("second: "+currentPath.getSecond().getFrom());
 //                    System.out.println("current: "+this.head.getCurrentDirection());
-                    Vector vec=currentPath.getFirst().getLocation().toVector().clone().add(currentPath.getSecond().getLocation().toVector().clone().multiply(-1));
+//                    Vector vec=currentPath.getFirst().getLocation().toVector().clone().add(currentPath.getSecond().getLocation().toVector().clone().multiply(-1));
 //                    System.out.println("vec: "+vec);
                     super.move(currentPath.getSecond().getFrom());
 
@@ -61,7 +62,9 @@ public class AdvancedAISnake extends AISnake{
                 location,"Advanced AI Snake", ChatColor.GOLD.toString(),arena
         );
     }
-
+    protected void nativeMove(Direction direction){
+        super.move(direction);
+    }
     public Location getGoal() {
         return goal;
     }

@@ -8,6 +8,7 @@ import snakegame.snakegame.gameObjects.Direction;
 import snakegame.snakegame.gameObjects.Path;
 import snakegame.snakegame.manager.CollisionManager;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class SnakePart {
@@ -130,6 +131,9 @@ public class SnakePart {
     public Direction getCurrentDirection(){
         return currentDirection;
     }
+    public void setCurrentDirection(Direction direction){
+        currentDirection=direction;
+    }
 
     public static SnakePart spawnOneHead(Location location, Material type){
 
@@ -143,5 +147,18 @@ public class SnakePart {
     @Override
     public String toString() {
         return "SnakePart{pos: "+location+", type: "+material+"}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SnakePart snakePart = (SnakePart) o;
+        return isHead == snakePart.isHead && material == snakePart.material && Objects.equals(location, snakePart.location) && Objects.equals(block, snakePart.block) && currentDirection == snakePart.currentDirection;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isHead, material, location, block, currentDirection);
     }
 }
